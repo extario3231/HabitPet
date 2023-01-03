@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="112dp"
+        android:layout_height="93dp"
+        android:src="@mipmap/sleep" />
+
+
+    <TextView
+        android:id="@+id/default_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sleep and wake up" />
+
+
+</LinearLayout>
