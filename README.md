@@ -21,3 +21,13 @@ The app is still under development.
 4. Drag the folder to Android Studio
 5. Press the 'Run' button in Android Studio
 6. Done
+
+## If you see the 'Run' button being grey
+
+1. Go to 'Add Configuration...'
+2. Click 'Add New...'
+3. Choose 'Android App'
+4. Go to 'Module' and choose xxxxxx.app.main
+5. Go to 'Launch' and choose 'Specified Activity'
+6. Go to 'Activity' and choose 'MainActivity'
+7. Done
