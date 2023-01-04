@@ -11,9 +11,9 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="595dp"
-        android:background="@drawable/untitled_removebg_preview_removebg_preview"
+        android:background="@drawable/untitled_removebg_preview"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp"></ImageView>
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
