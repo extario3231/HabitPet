@@ -22,7 +22,7 @@ The app is still under development.
 5. Press the 'Run' button in Android Studio
 6. Done
 
-## If you see the 'Run' button being grey
+## If you see a grey 'Run' button
 
 1. Go to 'Add Configuration...'
 2. Click 'Add New...'
