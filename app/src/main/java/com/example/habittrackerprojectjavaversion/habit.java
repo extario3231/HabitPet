@@ -56,6 +56,7 @@ public class habit extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.add_new_habit, null);
         final EditText addHabitText;
         Button addButton;
+
         addHabitText = view.findViewById(R.id.addHabit);
         addButton = view.findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener(){

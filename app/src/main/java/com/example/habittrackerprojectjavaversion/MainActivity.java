@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -28,11 +29,7 @@ public class MainActivity extends Activity {
 
         setListeners();
 
-        Animation animation = new AlphaAnimation(0, 1);
-        animation.setStartOffset(2000);
-        animation.setDuration(2000);
-        animation.setRepeatMode(10);
-
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.show_and_hide);
         myImageView.startAnimation(animation);
 
     }
