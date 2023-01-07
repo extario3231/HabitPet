@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:id="@+id/homeItem"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item
+        android:title="Habit"
+        android:id="@+id/habitItem"
+        android:icon="@drawable/ic_baseline_favorite_24"/>
+    <item
+        android:title="Task"
+        android:id="@+id/taskItem"
+        android:icon="@drawable/ic_baseline_task_alt_24"/>
+    <item
+        android:title="Test"
+        android:id="@+id/testItem"
+        android:icon="@drawable/ic_baseline_build_24"/>
+</menu>

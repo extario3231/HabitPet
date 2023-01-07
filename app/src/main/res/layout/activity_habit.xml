@@ -26,12 +26,6 @@
 			android:layout_height="350dp"
 			android:layout_alignParentBottom="true" />
 
-		<Button
-			android:id="@+id/addHabitButton"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="Add your own habit" />
-
 	</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

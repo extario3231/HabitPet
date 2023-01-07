@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
                 ImageView t_v = (ImageView)v;
                 if(t_v == myImageView)
                 {
-                    Intent intent = new Intent(MainActivity.this,home.class) ;
+                    Intent intent = new Intent(MainActivity.this,NextActivity.class) ;
                     startActivity(intent);
                     finish();
                 }
