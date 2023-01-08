@@ -22,7 +22,7 @@ The app is still under development.
 5. Press the 'Run' button in Android Studio
 6. Done
 
-## If you see a grey 'Run' button
+## See a gray 'Run' button? Or you can't see the 'Tap to start'?
 
 1. Go to 'Add Configuration...'
 2. Click 'Add New...'
