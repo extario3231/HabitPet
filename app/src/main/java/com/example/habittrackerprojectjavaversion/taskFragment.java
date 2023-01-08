@@ -26,15 +26,17 @@ public class taskFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    // self-defined variables
     AlertDialog dialog;
     Button button;
 
     ArrayList<NameMapping> showhabitlist = new ArrayList<NameMapping>();
     private habits habitlist;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public taskFragment() {
         // Required empty public constructor
