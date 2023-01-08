@@ -20,12 +20,18 @@ import java.util.List;
  * Use the {@link habitFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class habitFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    AlertDialog dialog;
+    Button button;
+    // arraylist should be declared outside the method
+    ArrayList<NameMapping> showhabitlist = new ArrayList<NameMapping>();
+    private habits habitlist;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,4 +74,20 @@ public class habitFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_habit, container, false);
     }
+
+
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+        habitlist = new habits();
+        habitlist.setSelection("All");
+
+        HabitAdapter adapter = new HabitAdapter(getActivity(), (ArrayList<NameMapping>) habitlist.getSelectedhabitList());
+        final ListView listView = getView().findViewById(R.id.list);
+        listView.setTextFilterEnabled(true);
+        listView.setAdapter(adapter);
+    }
+
 }

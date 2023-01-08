@@ -26,6 +26,11 @@ public class taskFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    AlertDialog dialog;
+    Button button;
+
+    ArrayList<NameMapping> showhabitlist = new ArrayList<NameMapping>();
+    private habits habitlist;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,5 +73,53 @@ public class taskFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_task, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+        habitlist = new habits();
+        habitlist.setSelection("favourite");
+
+
+        HabitAdapter adapter = new HabitAdapter(getActivity(), (ArrayList<NameMapping>) habitlist.getSelectedhabitList());
+        ListView listView = getView().findViewById(R.id.listtask);
+        listView.setTextFilterEnabled(true);
+        listView.setAdapter(adapter);
+
+        // create a alert dialog for entering new habit
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Add a new habit");
+        // specify the view we are going to access
+        View view = getLayoutInflater().inflate(R.layout.add_new_habit, null);
+        final EditText addHabitText;
+        Button addButton;
+
+        addHabitText = view.findViewById(R.id.addHabit);
+        addButton = view.findViewById(R.id.addButton);
+        addButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                habitlist.addhabit(addHabitText.getText().toString());
+                habitlist.setSelection("favourite");
+                dialog.dismiss();
+                HabitAdapter adapter = new HabitAdapter(getActivity(), (ArrayList<NameMapping>) habitlist.getSelectedhabitList());
+                ListView listView = getView().findViewById(R.id.listtask);
+                listView.setTextFilterEnabled(true);
+                listView.setAdapter(adapter);
+            }
+        });
+
+        builder.setView(view);
+        dialog = builder.create();
+        // call a dialog when press the button on the habit screen
+        button = getView().findViewById(R.id.add);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                dialog.show();
+            }
+        });
     }
 }
