@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,7 +74,16 @@ public class habitFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_habit, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_habit, container, false);
+        List<NameMapping> nameMappings = new ArrayList<>();
+        nameMappings.add(new NameMapping("exercise", R.mipmap.sport));
+
+        RecyclerView recyclerView = view.findViewById(R.id.habit_list);
+        recyclerView.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
+        recyclerView.setAdapter(new HabitsAdapter(nameMappings));
+
+        return view;
     }
 
 
@@ -84,10 +95,14 @@ public class habitFragment extends Fragment {
         habitlist = new habits();
         habitlist.setSelection("All");
 
-        HabitAdapter adapter = new HabitAdapter(getActivity(), (ArrayList<NameMapping>) habitlist.getSelectedhabitList());
-        final ListView listView = getView().findViewById(R.id.list);
-        listView.setTextFilterEnabled(true);
-        listView.setAdapter(adapter);
+
+
+//        HabitAdapter adapter = new HabitAdapter(getActivity(), (ArrayList<NameMapping>) habitlist.getSelectedhabitList());
+//        final ListView listView = getView().findViewById(R.id.list);
+//        listView.setTextFilterEnabled(true);
+//        listView.setAdapter(adapter);
+
+
     }
 
 }
