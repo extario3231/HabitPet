@@ -29,5 +29,5 @@ The app is still under development.
 3. Choose 'Android App'
 4. Go to 'Module' and choose xxxxxx.app.main
 5. Go to 'Launch' and choose 'Specified Activity'
-6. Go to 'Activity' and choose 'NextActivity'
+6. Go to 'Activity' and choose 'MainActivity'
 7. Done
