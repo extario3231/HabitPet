@@ -1,13 +1,23 @@
 package com.example.habittrackerprojectjavaversion;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +36,15 @@ public class homeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // self-defined parameters
+    private TextView tv;
+    private ArrayList<String> quoteArrayList;
+    private int arraySize;
+    private int quoteIndex;
+
+    ArrayList<SummaryNameMapping> showhabitlist = new ArrayList<>();
+    private summary habitlist;
 
     public homeFragment() {
         // Required empty public constructor
@@ -63,6 +82,27 @@ public class homeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        // There is a function for generate quote below, if you find it useless, just delete it.
+        /*
+        quoteArrayList.add("a");
+        quoteArrayList.add("b");
+        quoteArrayList.add("c");
+
+        GenerateQuote gq = new GenerateQuote(quoteArrayList);
+        tv.setText(gq.returnQuote());
+        tv = (TextView) getView().findViewById(R.id.quoteTextView);
+        */
+
+        habitlist = new summary();
+        habitlist.setSelection("favourite");
+
+        SummaryAdapter adapter = new SummaryAdapter(getActivity(), (ArrayList<SummaryNameMapping>) habitlist.getSelectedhabitList());
+        ListView listView = view.findViewById(R.id.summaryList);
+        listView.setTextFilterEnabled(true);
+        listView.setAdapter(adapter);
+
+        return view;
     }
+
 }

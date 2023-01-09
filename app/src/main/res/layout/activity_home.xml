@@ -22,7 +22,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
             android:background="#DDDDDD"
             android:text="Quote from celebrity"
             android:textSize="20dp" />

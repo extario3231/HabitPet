@@ -21,9 +21,7 @@
         <ListView
             android:id="@+id/listtask"
             android:layout_width="match_parent"
-            android:layout_height="350dp">
-
-        </ListView>
+            android:layout_height="350dp"/>
 
         <Button
             android:id="@+id/add"
